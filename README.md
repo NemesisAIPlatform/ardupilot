@@ -1,6 +1,7 @@
 ### Nemesis AirSim simulator
 git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
 (alternative https://github.com/NemesisAIPlatform/ardupilot.git)
+
 cd airsim/ardupilot
 
 docker build . -t ardupilot-dev --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
