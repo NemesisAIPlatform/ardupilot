@@ -1,5 +1,6 @@
 ### Nemesis AirSim simulator
 git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
+
 (alternative https://github.com/NemesisAIPlatform/ardupilot.git)
 
 cd airsim/ardupilot
@@ -25,12 +26,16 @@ docker run --gpus all --rm -it --network host -v "$PWD:/ardupilot" -w /ardupilot
 -------------------------------------------------
 
 https://ardupilot.org/dev/docs/sitl-with-airsim.html#sitl-with-airsim-install
+
 (Binaries - https://github.com/microsoft/AirSim/releases/download/v1.8.1/MSBuild2018.zip)
 
 airsim/MSBuild2018/LinuxNoEditor
+
 ./MSBuild2018.sh
+
 vim ~/Documents/AirSim/settings.json
 
+```
 {
     "Vehicles": {
      "Copter1": {
@@ -41,9 +46,10 @@ vim ~/Documents/AirSim/settings.json
      }
   }
 }
+```
 
 
-
+-------------------------------------------------
 
 # ArduPilot Project
 
