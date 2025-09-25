@@ -1,13 +1,13 @@
 ### Nemesis AirSim simulator
-git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
+`git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git`
 
 (alternative https://github.com/NemesisAIPlatform/ardupilot.git)
 
-cd airsim/ardupilot
+`cd airsim/ardupilot`
 
-docker build . -t ardupilot-dev --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
+`docker build . -t ardupilot-dev --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)`
 
-docker run --gpus all --rm -it --network host -v "$PWD:/ardupilot" -w /ardupilot  ardupilot-dev  bash
+`docker run --gpus all --rm -it --network host -v "$PWD:/ardupilot" -w /ardupilot  ardupilot-dev  bash`
 
         git config --global --add safe.directory /ardupilot
         git submodule update --init --recursive
@@ -27,13 +27,13 @@ docker run --gpus all --rm -it --network host -v "$PWD:/ardupilot" -w /ardupilot
 
 https://ardupilot.org/dev/docs/sitl-with-airsim.html#sitl-with-airsim-install
 
-(Binaries - https://github.com/microsoft/AirSim/releases/download/v1.8.1/MSBuild2018.zip)
+(Binaries - `wget -c https://github.com/microsoft/AirSim/releases/download/v1.8.1/MSBuild2018.zip`)
 
-airsim/MSBuild2018/LinuxNoEditor
+`cd airsim/MSBuild2018/LinuxNoEditor`
 
-./MSBuild2018.sh
+`./MSBuild2018.sh`
 
-vim ~/Documents/AirSim/settings.json
+`vim ~/Documents/AirSim/settings.json`
 
 ```
 {
