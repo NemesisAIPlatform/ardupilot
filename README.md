@@ -9,9 +9,10 @@
 
 `docker run --gpus all --rm -it --network host -v "$PWD:/ardupilot" -w /ardupilot  ardupilot-dev  bash`
 
-        git config --global --add safe.directory /ardupilot
-        git submodule update --init --recursive
+        git config --global --add safe.directory /ardupilot && \
+        git submodule update --init --recursive && \
         ./waf configure --board sitl && ./waf copter
+        
         ./build/sitl/bin/arducopter \
               --model airsim-copter --speedup 1 \
               --sim-address=127.0.0.1 \
@@ -20,11 +21,10 @@
               -I0 &
 
         mavproxy.py --master=tcp:127.0.0.1:5760
-                param set FRAME_CLASS 1;param set FRAME_TYPE 1;param save;reboot
+                param set FRAME_CLASS 1;param set FRAME_TYPE 1;param set ARMING_CHECK 0;param save;reboot
 
-
+Test mav console: `mode GUIDED; arm throttle; takeoff 30`
 -------------------------------------------------
-
 https://ardupilot.org/dev/docs/sitl-with-airsim.html#sitl-with-airsim-install
 
 (Binaries - `wget -c https://github.com/microsoft/AirSim/releases/download/v1.8.1/MSBuild2018.zip`)
