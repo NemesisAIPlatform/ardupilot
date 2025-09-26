@@ -20,10 +20,11 @@
               --sim-port-out 14540 \
               -I0 &
 
-        mavproxy.py --master=tcp:127.0.0.1:5760
+        mavproxy.py --master=tcp:127.0.0.1:5760 --out=udp:127.0.0.1:14541
                 param set FRAME_CLASS 1;param set FRAME_TYPE 1;param set ARMING_CHECK 0;param save;reboot
 
 Test mav console: `mode GUIDED; arm throttle; takeoff 30`
+
 -------------------------------------------------
 https://ardupilot.org/dev/docs/sitl-with-airsim.html#sitl-with-airsim-install
 
